@@ -7,12 +7,12 @@ public class OddEvenPrintDriver {
     private final int MAX = 30;
 
     private void printEven() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-
-        }
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//
+//        }
         synchronized (this) {
             while (count < MAX) {
                 while (odd) {

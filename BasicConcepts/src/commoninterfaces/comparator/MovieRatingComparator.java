@@ -12,4 +12,9 @@ public class MovieRatingComparator implements Comparator<Movie> {
         if (m1.getRating() > m2.getRating()) return 1;
         else return 0;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

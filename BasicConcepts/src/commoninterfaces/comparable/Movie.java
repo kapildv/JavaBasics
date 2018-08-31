@@ -25,7 +25,7 @@ public class Movie implements Comparable<Movie> {
     @Override
     public int compareTo(Movie movie) {
 
-        return this.year - movie.year;
+        return (int) (this.rating - movie.rating);
     }
 
     public double getRating() {

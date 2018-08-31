@@ -29,10 +29,7 @@ public class CricketData implements Subject {
 
     @Override
     public void notifyObserver() {
-
-        for (Iterator<Observer> it = observersList.iterator();
-             it.hasNext(); ) {
-            Observer observer = it.next();
+        for (Observer observer : observersList) {
             observer.update(runs, wickets, overs);
         }
     }
