@@ -1,9 +1,8 @@
-package sorting;
+package sorting.miscellaneous;
 
 public class QuickSort {
 
-    private void quickSort(int arr[], int start, int end) {
-
+    public void quickSort(int arr[], int start, int end) {
         if (start < end) {
             int pi = partition(arr, start, end);
             quickSort(arr, start, pi - 1);
@@ -12,24 +11,24 @@ public class QuickSort {
     }
 
     private int partition(int arr[], int start, int end) {
-
-        int pivot = arr[end];
+        int pivot = arr[start];
         int i = start - 1;
-        for (int j = start; j < end; j++) {
-            if (arr[j] <= pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
+        int j = end + 1;
 
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[end];
-        arr[end] = temp;
-        return (i + 1);
+        do {
+            i++;
+        } while (arr[i] < pivot);
+
+        do {
+            j--;
+        } while (arr[j] > pivot);
+
+        if (i >= j)
+            return j;
+
+        return 0;
+
     }
-
 
     public static void main(String[] args) {
         int arr[] = {2, 6, 5, 1, 9, 3, 10};
@@ -40,5 +39,5 @@ public class QuickSort {
             System.out.print(temp + " ");
         }
     }
-
 }
+

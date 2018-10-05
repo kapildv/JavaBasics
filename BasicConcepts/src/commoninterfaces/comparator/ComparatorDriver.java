@@ -4,6 +4,7 @@ import commoninterfaces.comparable.Movie;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ComparatorDriver {
 
@@ -22,7 +23,17 @@ public class ComparatorDriver {
 
         System.out.println("Sorted by rating");
         MovieRatingComparator ratingCompare = new MovieRatingComparator();
-        Collections.sort(list, ratingCompare);
+//        Collections.sort(list, ratingCompare);
+//
+//        System.out.println("Movies after sorting : ");
+//        for (Movie movie : list) {
+//            System.out.println(movie.getName() + " " +
+//                    movie.getRating() + " " +
+//                    movie.getYear());
+//        }
+
+        Comparator<Movie> sortByRating = Comparator.comparing(Movie::getRating);
+        list.sort(sortByRating);
         System.out.println("Movies after sorting : ");
         for (Movie movie : list) {
             System.out.println(movie.getName() + " " +
@@ -30,22 +41,31 @@ public class ComparatorDriver {
                     movie.getYear());
         }
 
-        System.out.println("Sorted by Name");
-        MovieNameComparator nameCompare = new MovieNameComparator();
-        Collections.sort(list, nameCompare);
-        System.out.println("Movies after sorting by Name : ");
+        Comparator<Movie> sortByName = Comparator.comparing(Movie::getName);
+        list.sort(sortByName);
         for (Movie movie : list) {
             System.out.println(movie.getName() + " " +
                     movie.getRating() + " " +
                     movie.getYear());
         }
 
-        System.out.println("\nSorted by year");
-        Collections.sort(list);
-        for (Movie movie : list)
-            System.out.println(movie.getYear() + " " +
-                    movie.getRating() + " " +
-                    movie.getName() + " ");
-
+//
+//        System.out.println("Sorted by Name");
+//        MovieNameComparator nameCompare = new MovieNameComparator();
+//        Collections.sort(list, nameCompare);
+//        System.out.println("Movies after sorting by Name : ");
+//        for (Movie movie : list) {
+//            System.out.println(movie.getName() + " " +
+//                    movie.getRating() + " " +
+//                    movie.getYear());
+//        }
+//
+//        System.out.println("\nSorted by year");
+//        Collections.sort(list);
+//        for (Movie movie : list)
+//            System.out.println(movie.getYear() + " " +
+//                    movie.getRating() + " " +
+//                    movie.getName() + " ");
+//
     }
 }

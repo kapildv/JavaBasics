@@ -8,7 +8,7 @@ public class LeapYear {
     }
 
     public static void main(String[] args) {
-        int year = 2012;
+        int year = 1700;
         LeapYear leapYear = new LeapYear();
         System.out.println(leapYear.isLeapYear(year));
 

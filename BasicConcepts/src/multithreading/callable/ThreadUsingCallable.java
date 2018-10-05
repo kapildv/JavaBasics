@@ -43,6 +43,10 @@ public class ThreadUsingCallable implements Callable<Object> {
             e.printStackTrace();
         }
 
+        ExecutorService executorService= Executors.newFixedThreadPool(1);
+        executorService.execute(futureTask);
+        executorService.shutdown();
+
     }
 }
 

@@ -1,6 +1,10 @@
 package designpatterns.observerpattern;
 
+import java.util.concurrent.Future;
+
 public class ObserverDriver {
+
+    Future<?> futureTask;
 
     public static void main(String[] args) {
         AverageScoreDisplay averageScoreDisplay = new AverageScoreDisplay();
@@ -10,6 +14,8 @@ public class ObserverDriver {
 
         cricketData.subscribe(currentScore);
         cricketData.subscribe(averageScoreDisplay);
+        cricketData.setLatestOvers(10.5f);
+        cricketData.setLatestWickets(9);
 
         cricketData.dataChanged();
         cricketData.unsubscribe(currentScore);
